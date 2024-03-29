@@ -1,0 +1,66 @@
+df = pd.read_csv("/content/car_prices.csv")
+
+df.head()
+
+df.corr()
+
+for i in range(9):
+  sample = df.year.sample(frac = 0.06)
+  t_test , p_value = stats.ttest_1samp(sample,df.year.mean())
+  if p_value > 0.06:
+    print("H0 Hypothesis null value is accepted, there is no significance difference")
+  else:
+    print("H0 Hypothesis null value is rejected, there is a significance difference")
+
+OUTPUT:
+
+H0 Hypothesis null value is accepted, there is no significance difference
+H0 Hypothesis null value is accepted, there is no significance difference
+H0 Hypothesis null value is accepted, there is no significance difference
+H0 Hypothesis null value is accepted, there is no significance difference
+H0 Hypothesis null value is accepted, there is no significance difference
+H0 Hypothesis null value is accepted, there is no significance difference
+H0 Hypothesis null value is accepted, there is no significance difference
+H0 Hypothesis null value is accepted, there is no significance difference
+H0 Hypothesis null value is accepted, there is no significance difference
+
+
+for i in range(9):
+  sample = df.condition.sample(frac = 0.06)
+  t_test , p_value = stats.ttest_1samp(sample,df.condition.mean())
+  if p_value > 0.06:
+    print("H0 Hypothesis null value is accepted, there is no significance difference")
+  else:
+    print("H0 Hypothesis null value is rejected, there is a significance difference")
+
+OUTPUT:
+
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+
+for i in range(9):
+  sample = df.odometer.sample(frac = 0.06)
+  t_test , p_value = stats.ttest_1samp(sample,df.odometer.mean())
+  if p_value > 0.06:
+    print("H0 Hypothesis null value is accepted, there is no significance difference")
+  else:
+    print("H0 Hypothesis null value is rejected, there is a significance difference")
+
+OUTPUT:
+
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
+H0 Hypothesis null value is rejected, there is a significance difference
